@@ -32,7 +32,7 @@ public FunktionInSprung(playerid)
 	new animlib[32];
 	new animname[32];
 	GetAnimationName(GetPlayerAnimationIndex(playerid),animlib,32,animname,32);
-	if(!strcmp(animname,"JUMP_LAND"))
+	if(!strcmp(animname,"JUMP_LAND") || !strcmp(animname,"FALL_LAND"))
 	{
 		KillTimer(TimerIDSprung);
 		ClearAnimations(playerid,1);
