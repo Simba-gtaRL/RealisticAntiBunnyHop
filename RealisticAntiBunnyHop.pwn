@@ -31,6 +31,14 @@ public FunktionInSprung(playerid)
 {
 	new animlib[32];
 	new animname[32];
+	new Float:vx,Float:vy,Float:vz;
+	GetPlayerVelocity(playerid,vx,vy,vz);
+	if(vz < -0.5)
+	{
+	    KillTimer(TimerIDSprung);
+	    SetTimerEx("KillTimerSprung",1000,false,"i",playerid);
+	    return 1;
+	}
 	GetAnimationName(GetPlayerAnimationIndex(playerid),animlib,32,animname,32);
 	if(!strcmp(animname,"JUMP_LAND") || !strcmp(animname,"FALL_LAND"))
 	{
