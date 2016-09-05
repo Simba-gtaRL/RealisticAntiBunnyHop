@@ -29,12 +29,12 @@ public KillTimerSprung(playerid)
 
 public FunktionInSprung(playerid)
 {
-    new animlib[32];
-    new animname[32];
-    GetAnimationName(GetPlayerAnimationIndex(playerid),animlib,32,animname,32);
+	new animlib[32];
+	new animname[32];
+	GetAnimationName(GetPlayerAnimationIndex(playerid),animlib,32,animname,32);
 	if(!strcmp(animname,"JUMP_LAND"))
 	{
-        KillTimer(TimerIDSprung);
+		KillTimer(TimerIDSprung);
 		ClearAnimations(playerid,1);
 		ApplyAnimation(playerid,"ped","FALL_COLLAPSE",4.1,0,1,1,0,0,1);
 		SetTimerEx("KillTimerSprung",1000,false,"i",playerid);
